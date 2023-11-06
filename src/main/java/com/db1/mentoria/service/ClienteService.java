@@ -15,7 +15,7 @@ public class ClienteService {
     }
 
     public void executar() {
-        Cliente cliente = new Cliente("Thalisson", 1L, LocalDateTime.now());
+        Cliente cliente = new Cliente(1L, "Thalisson", LocalDateTime.now());
         System.out.println("ClienteService.executar");
         repository.executar(cliente);
     }
