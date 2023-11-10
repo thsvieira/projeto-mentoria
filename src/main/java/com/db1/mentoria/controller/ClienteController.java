@@ -1,7 +1,6 @@
 package com.db1.mentoria.controller;
 
 import com.db1.mentoria.dto.ClienteDTO;
-import com.db1.mentoria.repository.ClienteRepository;
 import com.db1.mentoria.service.ClienteService;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +21,7 @@ public class ClienteController {
     }
 
     @GetMapping(path = "/teste/{id}")
-    public String testeCliente(@RequestParam Long id) {
+    public String testeCliente(@PathVariable Long id) {
         System.out.println("Deu certo");
         return "ok";
     }
