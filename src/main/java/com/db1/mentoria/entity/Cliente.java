@@ -5,8 +5,12 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "cliente", schema = "my_schema")
+@Table(name = "cliente")
 public class Cliente {
+
+    public Cliente() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -14,12 +18,11 @@ public class Cliente {
     @Column(name = "nome")
     private String nome;
 
-    @Column(name = "dataNascimento")
+    @Column(name = "data_nascimento")
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime dataNascimento;
 
-    public Cliente(Long id, String nome, LocalDateTime dataNascimento) {
-        this.id = id;
+    public Cliente(String nome, LocalDateTime dataNascimento) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
     }
